@@ -1,6 +1,7 @@
-import UIButtons from "./UIButtons";
-import UIHeader from "./UIHeader";
-export default {
+import UIButtons from "./UIButtons"
+import UIHeader from "./UIHeader"
+
+export {
     UIButtons,
     UIHeader,
 }

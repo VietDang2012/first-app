@@ -9,9 +9,9 @@ function UIHeader(props) {
         justifyContent: 'center'
     }}>
         <Text style={{
-            color: 'white',
             fontSize: fontSizes.h1,
             fontWeight: 'bold',
+            color: 'white',
             alignSelf: 'center'
         }}>
             Settings
