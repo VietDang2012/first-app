@@ -1,11 +1,13 @@
 import React, { Component, useState, useEffect } from 'react'
-import { Text, View, Image, ImageBackground, TouchableOpacity, Alert, TextInput, KeyboardAvoidingView, Keyboard } from 'react-native'
+import { Text, View, Image, ImageBackground, TouchableOpacity, ScrollView, TextInput, KeyboardAvoidingView, Keyboard } from 'react-native'
 import { Colors } from 'react-native/Libraries/NewAppScreen'
 import { icons, images, colors, fontSizes } from '../constants'
-import Icon from 'react-native-vector-icons/FontAwesome'
+import Icon from 'react-native-vector-icons/FontAwesome5'
 import { isValidEmail, isValidPassword } from '../utilies/Validation'
 
 function Login(props) {
+    const { navigation, route } = props
+    const { navigate, goBack } = navigation
     const [keyboardIsShown, setkeyboardIsShown] = useState(false)
     // states for validating
     const [errorEmail, setErrorEmail] = useState('')
@@ -28,8 +30,20 @@ function Login(props) {
         style={{
             flex: 100,
         }}>
+        <TouchableOpacity>
+            <Icon
+                onPress={
+                    function () {
+                        navigate('Welcome')
+                    }
+                }
+                name='arrow-left'
+                size={30}
+                color={colors.primary}
+                padding={20} />
+        </TouchableOpacity>
         <View style={{
-            flex: 30,
+            flex: 25,
             flexDirection: 'row',
             justifyContent: 'space-around',
             alignItems: 'center',
@@ -54,7 +68,7 @@ function Login(props) {
                 }} />
         </View>
         <View style={{
-            flex: 35,
+            flex: 40,
             paddingTop: 60
         }}>
             <View style={{
@@ -137,7 +151,7 @@ function Login(props) {
             <TouchableOpacity
                 disabled={isValidationOK() == false}
                 onPress={() => {
-                    Alert.alert('Logging', 'Please wait for a minutes')
+                    navigate('UItab')
                 }}
                 style={{
                     backgroundColor: isValidationOK() == true ?
@@ -157,7 +171,7 @@ function Login(props) {
             </TouchableOpacity>
             <TouchableOpacity
                 onPress={() => {
-                    Alert.alert('Hello Baby')
+                    navigate('Register')
                 }}
                 style={{
                     padding: 5

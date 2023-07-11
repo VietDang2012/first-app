@@ -7,6 +7,8 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import { isValidEmail, isValidPassword } from '../utilies/Validation'
 
 function Register(props) {
+    const {navigation, route} = props
+    const {navigate, goBack} = navigation
     const [keyboardIsShown, setkeyboardIsShown] = useState(false)
     // states for validating
     const [errorEmail, setErrorEmail] = useState('')
@@ -30,11 +32,23 @@ function Register(props) {
             flex: 100,
             backgroundColor: colors.primary
         }}>
+        <TouchableOpacity>
+            <Icon
+                onPress={
+                    function () {
+                        navigate('Welcome')
+                    }
+                }
+                name='arrow-left'
+                size={30}
+                color={'white'}
+                padding={20} />
+        </TouchableOpacity>
         <View style={{
             flexDirection: 'row',
             justifyContent: 'space-around',
             alignItems: 'center',
-            padding: 40
+            marginBottom: 20
         }}>
             <Image
                 source={
@@ -47,7 +61,7 @@ function Register(props) {
                 }} />
         </View>
         <View style={{
-            paddingVertical: 40,
+            paddingVertical: 30,
             marginHorizontal: 10,
             borderRadius: 12,
             backgroundColor: 'white'
@@ -164,7 +178,7 @@ function Register(props) {
             {keyboardIsShown == false && <TouchableOpacity
                 disabled={isValidationOK() == false}
                 onPress={() => {
-                    Alert.alert('Logging', 'Please wait for a minutes')
+                    navigate('UItab')
                 }}
                 style={{
                     backgroundColor: isValidationOK() == true ?

@@ -14,10 +14,10 @@ function App(props) {
         <Stack.Navigator initialRouteName='Welcome' screenOptions={{
             headerShown: false
         }}>
-            {/* <Stack.Screen name={'Welcome'} component={Welcome}/>
+            <Stack.Screen name={'Welcome'} component={Welcome}/>
             <Stack.Screen name={'Login'} component={Login}/>
-            <Stack.Screen name={'Register'} component={Register}/> */}
-            {/* <Stack.Screen name={'UItab'} component={UItab}/> */}
+            <Stack.Screen name={'Register'} component={Register}/>
+            <Stack.Screen name={'UItab'} component={UItab}/>
         </Stack.Navigator>
     </NavigationContainer>
 }

@@ -1,24 +1,23 @@
 import React, { Component, useState, useEffect } from 'react';
 import { Text, View, Image, ImageBackground, TouchableOpacity, Alert } from 'react-native'
-import { Colors } from 'react-native/Libraries/NewAppScreen';
-import { sum2Number, substract2Number, Pi } from '../utilies/Caculation'
 import { icons, images, colors, fontSizes } from '../constants'
-import Icon from 'react-native-vector-icons/FontAwesome'
-import { UIbuttons } from '../components/UIButtons'
+import { UIButtons } from '../components';
 // Component = Function
 
 function Welcome(props) {
+    const {navigation, route} = props
+    const {navigate, goBack} = navigation
     const [accountTypes, setAccountTypes] = useState([
         {
-            name: 'Big Butts',
+            name: 'Individual',
             isSelected: false,
         },
         {
-            name: 'Big Hole',
+            name: 'Business',
             isSelected: false,
         },
         {
-            name: 'Stinky Ass',
+            name: 'Influencer',
             isSelected: false,
         },
     ])
@@ -92,20 +91,22 @@ function Welcome(props) {
                     marginBottom: 5,
                     color: 'white',
                     fontSize: fontSizes.h5,
-                }}>Please seclect your ass type</Text>
+                }}>Please seclect your account type</Text>
             </View>
             <View style={{
                 flex: 30,
             }}>
                 {accountTypes.map(accountType =>
-                    <UIbuttons onPress={() => {
-                        setAccountTypes(accountTypes.map(eachAccountType => {
-                            return {
-                                ...eachAccountType,
-                                isSelected: eachAccountType.name == accountType.name
-                            }
-                        }))
-                    }}
+                    <UIButtons
+                    key={accountType.name}
+                        onPress={() => {
+                            setAccountTypes(accountTypes.map(eachAccountType => {
+                                return {
+                                    ...eachAccountType,
+                                    isSelected: eachAccountType.name == accountType.name
+                                }
+                            }))
+                        }}
                         tilte={accountType.name}
                         isSelected={accountType.isSelected}
                     />)
@@ -114,7 +115,12 @@ function Welcome(props) {
             <View style={{
                 flex: 20,
             }}>
-                <UIbuttons
+                <UIButtons
+                    onPress={
+                        function() {
+                            navigate('Login')
+                        }
+                    }
                     key={accountTypes.name}
                     tilte={'login'.toUpperCase()} />
                 <View style={{
@@ -128,8 +134,8 @@ function Welcome(props) {
                         Doesn't have an account ?
                     </Text>
                     <TouchableOpacity
-                        onPress={() => {
-                            Alert.alert('Đmm')
+                        onPress={function() {
+                            navigate('Register')
                         }}>
                         <Text style={{
                             color: 'lightblue',
