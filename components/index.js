@@ -1,4 +1,4 @@
-import UIButtons from "./UIButtons"
+import { UIButtons } from "./UIButtons"
 import UIHeader from "./UIHeader"
 
 export {

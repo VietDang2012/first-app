@@ -3,6 +3,7 @@ import { Text, View } from 'react-native'
 import { colors, fontSizes } from '../constants'
 
 function UIHeader(props) {
+    const {tilte} = props
     return <View style={{
         height: 60,
         backgroundColor: colors.primary,
@@ -14,11 +15,9 @@ function UIHeader(props) {
             color: 'white',
             alignSelf: 'center'
         }}>
-            Settings
+            {tilte}
         </Text>
     </View>
 }
 
-export {
-    UIHeader
-}
+export default UIHeader
