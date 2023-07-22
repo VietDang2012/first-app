@@ -1,7 +1,5 @@
 import React, { Component, useState, useEffect } from 'react'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import { Text, View, Image, ImageBackground, TouchableOpacity, Alert, TextInput, KeyboardAvoidingView, Keyboard } from 'react-native'
-import { Colors } from 'react-native/Libraries/NewAppScreen'
+import { Text, View, Image, TouchableOpacity } from 'react-native'
 import { icons, images, colors, fontSizes } from '../../constants'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
@@ -19,7 +17,10 @@ function FoodItem(props) {
             height: 160,
             paddingTop: 20,
             paddingStart: 10,
-            flexDirection: 'row'
+            flexDirection: 'row',
+            borderRadius: 10,
+            margin: 5,
+            backgroundColor: 'white'
         }}>
         <Image
             source={{

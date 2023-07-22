@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator()
 
 function App(props) {
     return <NavigationContainer>
-        <Stack.Navigator initialRouteName='Welcome' screenOptions={{
+        <Stack.Navigator initialRouteName='UItab' screenOptions={{
             headerShown: false
         }}>
             <Stack.Screen name={'Welcome'} component={Welcome}/>

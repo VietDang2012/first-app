@@ -1,7 +1,6 @@
 import React, { Component, useState, useEffect } from 'react'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import { Text, View, Image, ImageBackground, TouchableOpacity, Alert, TextInput, KeyboardAvoidingView, Keyboard } from 'react-native'
-import { Colors } from 'react-native/Libraries/NewAppScreen'
+import { Text, View, Image, TouchableOpacity, TextInput, Keyboard } from 'react-native'
 import { icons, images, colors, fontSizes } from '../constants'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { isValidEmail, isValidPassword } from '../utilies/Validation'

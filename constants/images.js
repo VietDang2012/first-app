@@ -5,4 +5,5 @@ export default {
     ryan: require('../assets/ryan_gosling.png'),
     account: require('../assets/account.png'),
     pizza: require('../assets/pizza.jpg'),
+    profile_background: require('../assets/profile_background.jpg'),
 }

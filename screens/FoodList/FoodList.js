@@ -1,10 +1,7 @@
-import React, { Component, useState, useEffect } from 'react'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import { Text, View, Image, ImageBackground, TouchableOpacity, Alert, TextInput, KeyboardAvoidingView, Keyboard, ScrollView, FlatList } from 'react-native'
-import { Colors } from 'react-native/Libraries/NewAppScreen'
+import React, { useState } from 'react'
+import { Text, View, Image, TouchableOpacity, Alert, TextInput, FlatList, SafeAreaView } from 'react-native'
 import { icons, images, colors, fontSizes } from '../../constants'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import { isValidEmail, isValidPassword } from '../../utilies/Validation'
 import FoodItem from './FoodItem'
 
 function FoodList(props) {
@@ -144,7 +141,7 @@ function FoodList(props) {
 
     const [searchText, setSearchText] = useState('')
 
-    return <View style={{
+    return <SafeAreaView style={{
         flex: 1
     }}>
         <View>
@@ -182,7 +179,7 @@ function FoodList(props) {
                 />
             </View>
             <View style={{
-                height: 100,
+                height: 100
             }}>
                 <View style={{ height: 1, backgroundColor: colors.inactive }} />
                 <FlatList
@@ -224,6 +221,9 @@ function FoodList(props) {
             </View>
         </View>
         {filteredFoods().length > 0 ? <FlatList
+            style={{
+                backgroundColor: colors.behind
+            }}
             data={filteredFoods()}
             renderItem={({ item }) => <FoodItem
                 onPress={function () {
@@ -243,7 +243,7 @@ function FoodList(props) {
                 No food found
             </Text>
         </View>}
-    </View>
+    </SafeAreaView>
 }
 
 export default FoodList

@@ -1,6 +1,5 @@
-import React, { Component, useState, useEffect } from 'react'
-import { Text, View, Image, ImageBackground, TouchableOpacity, ScrollView, TextInput, KeyboardAvoidingView, Keyboard } from 'react-native'
-import { Colors } from 'react-native/Libraries/NewAppScreen'
+import React, { useState, useEffect } from 'react'
+import { Text, View, Image, TouchableOpacity, TextInput, KeyboardAvoidingView, Keyboard } from 'react-native'
 import { icons, images, colors, fontSizes } from '../constants'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import { isValidEmail, isValidPassword } from '../utilies/Validation'

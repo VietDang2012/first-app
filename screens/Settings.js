@@ -1,7 +1,5 @@
 import React, { Component, useState, useEffect } from 'react'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import { Text, View, ScrollView, Switch } from 'react-native'
-import { Colors } from 'react-native/Libraries/NewAppScreen'
+import { Text, View, ScrollView, Switch, SafeAreaView } from 'react-native'
 import { icons, images, colors, fontSizes } from '../constants'
 import { UIHeader } from '../components'
 import Icon from 'react-native-vector-icons/FontAwesome5'
@@ -11,7 +9,7 @@ function Settings(props) {
     const [isUseFingerprint, setUseFingerprint] = useState(true);
     const [isEnabledChangePassword, setEnabledChangePassword] = useState(true);
 
-    return <View style={{
+    return <SafeAreaView style={{
         flex: 1
     }}>
         <UIHeader tilte={'Settings'} />
@@ -294,7 +292,7 @@ function Settings(props) {
                 }} />
             </View>
         </ScrollView>
-    </View>
+    </SafeAreaView>
 }
 
 export default Settings
